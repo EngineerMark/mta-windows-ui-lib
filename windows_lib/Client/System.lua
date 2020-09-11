@@ -28,7 +28,7 @@ end
 
 function System:RegisterElement(object)
     if(object~=nil)then
-        object.element = self;
+        object.element.parentSystem = self;
         table.insert(self.elements, object);
     end
 end

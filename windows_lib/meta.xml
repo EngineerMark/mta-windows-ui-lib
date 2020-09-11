@@ -8,6 +8,8 @@
     <script src="Client/Utils.lua" cache="false" type="client" />
     <script src="Client/Element.lua" cache="false" type="client" />
     <script src="Client/System.lua" cache="false" type="client" />
+    <script src="Client/Window.lua" cache="false" type="client" />
+    <script src="Client/Button.lua" cache="false" type="client" />
 
     <file src="Assets/Fonts/SegoePro-Regular.ttf" />
 
