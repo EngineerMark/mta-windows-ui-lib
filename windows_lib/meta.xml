@@ -1,6 +1,15 @@
 <meta>
     <info name="Windows UI Library" author="LeCC" version="1.0" description="A Windows-themed UI system multi-purpose usage" />
 
+    <!-- Testing Script -->
+    <script src="Client/Local_Test.lua" cache="false" type="client" />
+    <!-- Testing Script End -->
+
+    <script src="Client/Utils.lua" cache="false" type="client" />
     <script src="Client/Element.lua" cache="false" type="client" />
     <script src="Client/System.lua" cache="false" type="client" />
+
+    <file src="Assets/Fonts/SegoePro-Regular.ttf" />
+
+    <file src="Assets/Images/wallpaper_01.jpg" />
 </meta>

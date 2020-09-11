@@ -11,32 +11,44 @@ System.defaultValues = {
 
 function System.Create(settings)
     local object = setmetatable({}, System);
-    object.element = Element.Create();
+    object.element = Element.Create(object, object);
 
     object.settings = System.defaultValues;
 
-    for k,v in pairs(settings) do
-        object.settings[k] = v;
+    if(settings~=nil and #settings>0)then
+        for k,v in pairs(settings) do
+            object.settings[k] = v;
+        end
     end
     object.elements = {};
+    object.fonts = {};
 
     return object;
 end
 
-function System:RegisterElement(element)
-    if(element~=nil)then
-        table.insert(self.elements, element);
+function System:RegisterElement(object)
+    if(object~=nil)then
+        object.element = self;
+        table.insert(self.elements, object);
     end
 end
 
+function System:RegisterFont(name, fontPath)
+
+end
+
 function System:Update()
-    for i=1,#object.elements do
-        object.elements[i]:Update();
+    if(#self.elements>0)then
+        for i=1,#self.elements do
+            self.elements[i]:Update();
+        end
     end
 end
 
 function System:Render()
-    for i=1,#object.elements do
-        object.elements[i]:Render();
+    if(#self.elements>0)then
+        for i=1,#self.elements do
+            self.elements[i]:Render();
+        end
     end
 end
